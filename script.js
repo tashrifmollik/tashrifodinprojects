@@ -1,20 +1,21 @@
 
 const container = document.getElementById('container');
 
+const button= document.getElementById('button');
+
+let input = document.getElementById('input');
 
 
-const input = document.getElementById('input');
 
 let userInput=16;
 
 let totalGrid= userInput*userInput;
 
-input.addEventListener('click',()=>{
+button.addEventListener('click',()=>{
 
 
-  let promptInput= prompt('ENTER THE AMOUNT OF GRIDS DESIRED(1-100)');
+  let promptInput= input.value;
   userInput=parseInt(promptInput);
-
   
   if(userInput===''|| userInput<1|| userInput>100){
     alert('please enter a valid number between 1 and 100.');
@@ -28,9 +29,8 @@ input.addEventListener('click',()=>{
 
   createGrid();
 
-  if (div.style.backgroundColor === 'black') {
-    div.style.backgroundColor = 'white'; // Reset to white or default
-  }
+ 
+  input.value='';
 })
 
 function createDiv(){
